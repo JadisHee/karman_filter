@@ -2,6 +2,8 @@ clear;
 close all;
 clc;
 data = xlsread('data_0328_2');
+
+% ¶ÁÈ¡Êý¾Ý
 load('acc_.mat');
 load('z.mat')
 
