@@ -15,6 +15,9 @@ dt = 0.016;
 % imu预测的速度
 velocity_imu = data(:,3);
 
+displacement_imu = data(:,5);
+
+displacement_slam = data(:,4);
 % 里程计速度
 velocity_odom = data(:,2);
 % 定义观测量，并把通过里程计速度计算出观测位移
@@ -68,4 +71,8 @@ figure(1)
 plot(Z)
 hold on
 plot(X_hat)
-legend('轮式里程计测量值','卡尔曼估计值')
+hold on 
+plot(displacement_imu)
+hold on 
+plot(displacement_slam)
+legend('轮式里程计测量值','卡尔曼估计值','惯导解算位移','slam位移')
